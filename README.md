@@ -1,1 +1,1 @@
-Projeto final do Curso Front-End Senai
+Projeto Final do Curso Front-End Senai
