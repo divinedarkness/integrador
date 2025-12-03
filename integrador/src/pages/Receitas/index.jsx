@@ -1,4 +1,3 @@
-import { Container, Title, StyledButton } from "./style";
 
 export function Receitas(props) {
   return (

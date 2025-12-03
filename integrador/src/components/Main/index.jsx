@@ -6,11 +6,23 @@ import carrossel2 from '../../assets/carrossel2.jpeg'
 import carrossel3 from '../../assets/carrossel3.jpeg'
 import carrossel4 from '../../assets/carrossel4.jpg'
 import carrossel5 from '../../assets/carrossel5.jpeg'
-import { ACtontainer, MainContainer, SecondContainer } from './style';
+import { Input, LeftSide, MainContainer, RightSide, SearchContainer, SecondContainer, SubTitle, Tag, Tags, Title, Wrapper } from './style';
 import { Button } from '../Button';
 
 
 export function Main() {
+
+    const termos = [
+        "carne moida",
+        "panqueca",
+        "bolo de banana",
+        "jantar vegano",
+        "salpicão",
+        "panetone",
+        "bolo",
+        "saladas",
+    ]
+
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -72,17 +84,27 @@ export function Main() {
             </MainContainer>
 
             <SecondContainer>
-                <h1>O que você quer cozinhar hoje?</h1>
-                <input type="text" placeholder='Procurar receita' />
-                <Button handleClick={handleLogoutClick} />
+                <Wrapper>
+                    <LeftSide>
+                        <Title>o que você quer cozinhar hoje?</Title>
 
-                <ACtontainer>
-                    <h1>Mais procurados</h1>
-                    <a href="">carnes</a>
-                    <a href="">Bolho de milho em lata</a>
-                    <a href="">pizza caseira simples</a>
-                    <a href="">coxa e sobrecoxa</a>
-                </ACtontainer>
+
+                        <SearchContainer>
+                            <Input placeholder="procurar receita ou ingrediente" />
+                            <Button>🔍 procurar</Button>
+                        </SearchContainer>
+                    </LeftSide>
+
+
+                    <RightSide>
+                        <SubTitle>termos em alta</SubTitle>
+                        <Tags>
+                            {termos.map((tag, index) => (
+                                <Tag key={index}>{tag}</Tag>
+                            ))}
+                        </Tags>
+                    </RightSide>
+                </Wrapper>
             </SecondContainer>
         </>
     )
