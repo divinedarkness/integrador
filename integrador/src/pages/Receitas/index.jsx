@@ -8,8 +8,10 @@ import {
   Card,
   Detail
 } from "./style";
+import { Header } from "../../components/Header"
 
-const BASE_URL = "http://localhost:3000";
+
+const BASE_URL = "http://localhost:3001";
 
 export function ReceitasList() {
   const [receitas, setReceitas] = useState([]);
@@ -36,7 +38,7 @@ export function ReceitasList() {
       setReceitas(data);
     } catch (err) {
       console.error("Erro ao buscar receitas", err);
-      alert("Erro ao buscar receitas. Verifique se o servidor json está rodando.");
+      alert("Erro ao buscar receitas.");
     } finally {
       setLoading(false);
     }
@@ -56,7 +58,7 @@ export function ReceitasList() {
     };
 
     try {
-      const res = await fetch(`${BASE_URL}/recipes`, {
+      const res = await fetch(`${BASE_URL}/receitas`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newRecipe)
@@ -73,7 +75,7 @@ export function ReceitasList() {
   async function handleDelete(id) {
     if (!confirm("Excluir essa receita?")) return;
     try {
-      await fetch(`${BASE_URL}/recipes/${id}`, { method: "DELETE" });
+      await fetch(`${BASE_URL}/receitas/${id}`, { method: "DELETE" });
       setReceitas(prev => prev.filter(r => r.id !== id));
     } catch (err) {
       console.error(err);
@@ -83,7 +85,7 @@ export function ReceitasList() {
 
   async function toggleFavorite(id, current) {
     try {
-      const res = await fetch(`${BASE_URL}/recipes/${id}`, {
+      const res = await fetch(`${BASE_URL}/receitas/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ favorite: !current })
@@ -103,6 +105,7 @@ export function ReceitasList() {
 
   return (
     <ReceitasContainer>
+      <Header />
       <TopBar>
         <div className="searchGroup">
           <input
@@ -156,9 +159,9 @@ export function ReceitasList() {
                   <Link to={`/receitas/${r.id}`}>ver</Link>
                   <button className="edit" onClick={() => navigate(`/receitas/${r.id}?edit=true`)}>editar</button>
                   <button className="delete" onClick={() => handleDelete(r.id)}>excluir</button>
-                  <button className="favorite" onClick={() => toggleFavorite(r.id, r.favorite)}>
+                  {/* <button className="favorite" onClick={() => toggleFavorite(r.id, r.favorite)}>
                     {r.favorite ? "★" : "☆"}
-                  </button>
+                  </button> */}
                 </div>
               </Card>
             ))}

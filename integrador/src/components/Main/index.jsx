@@ -20,7 +20,7 @@ export function Main() {
         "salpicão",
         "panetone",
         "bolo",
-        "saladas",
+        "salada de quuinoa",
     ]
 
 
@@ -91,7 +91,7 @@ export function Main() {
 
                         <SearchContainer>
                             <Input placeholder="procurar receita ou ingrediente" />
-                            <Button>🔍 procurar</Button>
+                            <Button handleClick={handleLogoutClick}>🔍 procurar</Button>
                         </SearchContainer>
                     </LeftSide>
 
