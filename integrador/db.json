@@ -1,17 +1,22 @@
-
-
-
 {
-    "receitas": [
-        {
-            "id": "1",
-            "title": "First Post",
-            "views": 100
-        },
-        {
-            "id": "2",
-            "title": "Second Post",
-            "views": 200
-        }
-    ]
+  "receitas": [
+    {
+      "id": 1,
+      "title": "Bolo de Banana",
+      "description": "Bolo fofinho com bananas maduras e canela.",
+      "ingredients": ["3 bananas", "2 ovos", "1 xícara de açúcar", "2 xícaras de farinha", "1/2 xícara de óleo", "1 colher de sopa de fermento"],
+      "preparo": "Amasse as bananas. Misture os ovos e o açúcar, acrescente o óleo e a farinha. Por último o fermento. Asse a 180°C por 40 minutos.",
+      "favorite": false,
+      "createdAt": "2025-01-12T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Salada de Quinoa",
+      "description": "Salada leve e nutritiva com quinoa e legumes.",
+      "ingredients": ["1 xícara de quinoa", "2 tomates", "1 pepino", "salsinha", "azeite", "sal"],
+      "preparo": "Cozinhe a quinoa. Pique os legumes e misture. Tempere a gosto.",
+      "favorite": true,
+      "createdAt": "2025-02-01T11:30:00.000Z"
+    }
+  ]
 }
