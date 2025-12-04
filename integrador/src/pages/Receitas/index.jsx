@@ -44,6 +44,11 @@ export function ReceitasList() {
     }
   }
 
+  function SetReceitaSelection(receitas) {
+        setSelectedReceitaId(receita.id)
+    }
+
+
   async function handleCreate(e) {
     e.preventDefault();
     if (!form.title.trim()) return alert("Título é obrigatório");
