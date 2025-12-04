@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   ReceitasContainer,
-  TopBar,
   CreateForm,
   List,
   Card,
@@ -11,7 +10,7 @@ import {
 import { Header } from "../../components/Header"
 
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "http://localhost:3000";
 
 export function ReceitasList() {
   const [receitas, setReceitas] = useState([]);
@@ -45,8 +44,8 @@ export function ReceitasList() {
   }
 
   function SetReceitaSelection(receitas) {
-        setSelectedReceitaId(receita.id)
-    }
+    setSelectedReceitaId(receita.id)
+  }
 
 
   async function handleCreate(e) {
@@ -111,20 +110,6 @@ export function ReceitasList() {
   return (
     <ReceitasContainer>
       <Header />
-      <TopBar>
-        <div className="searchGroup">
-          <input
-            placeholder="Buscar por título ou ingrediente..."
-            value={q}
-            onChange={e => setQ(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <button onClick={() => navigate("/receitas")}>Atualizar lista</button>
-        </div>
-      </TopBar>
-
       <CreateForm onSubmit={handleCreate}>
         <input
           placeholder="Título"
@@ -164,9 +149,6 @@ export function ReceitasList() {
                   <Link to={`/receitas/${r.id}`}>ver</Link>
                   <button className="edit" onClick={() => navigate(`/receitas/${r.id}?edit=true`)}>editar</button>
                   <button className="delete" onClick={() => handleDelete(r.id)}>excluir</button>
-                  {/* <button className="favorite" onClick={() => toggleFavorite(r.id, r.favorite)}>
-                    {r.favorite ? "★" : "☆"}
-                  </button> */}
                 </div>
               </Card>
             ))}
@@ -182,13 +164,13 @@ export function ReceitaDetalhes() {
   const [receita, setReceita] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  const BASE_URL = "http://localhost:3000";
   useEffect(() => {
     if (!id) return;
     (async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${BASE_URL}/recipes/${id}`);
+        const res = await fetch(`${BASE_URL}/receitas/${id}`);
         if (res.status === 404) {
           setReceita(null);
         } else {

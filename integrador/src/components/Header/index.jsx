@@ -8,16 +8,16 @@ export function Header() {
             <LogoContainer>
                 <ImgContainer src={logoImg} />
                 <LinkContainer>
-                    <a href="/receitas">frango</a>
-                    <a href="/receitas">carnes</a>
-                    <a href="/receitas">massas</a>
-                    <a href="/receitas">bolos</a>
+                    <a href="/receitas">Frango</a>
+                    <a href="/receitas">Carnes</a>
+                    <a href="/receitas">Massas</a>
+                    <a href="/receitas">Bolos</a>
 
                 </LinkContainer>
 
             </LogoContainer>
             <LinkContainer>
-                <InputContainer type="text" placeholder="procurar receita" />
+                <InputContainer type="text" placeholder="Procurar Receita" />
                 <a href="/">HOME</a>
                 <a href="/receitas">Receitas</a>
             </LinkContainer>

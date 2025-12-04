@@ -14,7 +14,7 @@
       ],
       "preparo": "Amasse as bananas. Misture os ovos e o açúcar, acrescente o óleo e a farinha. Por último o fermento. Asse a 180°C por 40 minutos.",
       "favorite": false,
-      "createdAt": "2025-01-12T09:00:00.000Z"
+      "createdAt": "2025-12-04T09:00:00.000Z"
     },
     {
       "id": "2",
@@ -29,8 +29,8 @@
         "sal"
       ],
       "preparo": "Cozinhe a quinoa. Pique os legumes e misture. Tempere a gosto.",
-      "favorite": true,
-      "createdAt": "2025-02-01T11:30:00.000Z"
+      "favorite": false,
+      "createdAt": "2025-12-04T11:30:00.000Z"
     },
     {
       "id": "3",
@@ -43,7 +43,7 @@
       ],
       "preparo": "Cozinhe o peito de frango com sal a gosto e depois desfie e reserve. Rale a cenoura e fervente com sal por 10 minutos, após isso, escorra a cenoura e reserve. Por último, acrescente a mistura do creme de leite com a maionese e mecha a cada item acrescentado, deixando a mistura bem homogênea.",
       "favorite": false,
-      "createdAt": "2025-01-12T09:00:00.000Z"
+      "createdAt": "2025-12-04T09:00:00.000Z"
     }
   ]
 }

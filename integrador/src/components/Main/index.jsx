@@ -13,14 +13,14 @@ import { Button } from '../Button';
 export function Main() {
 
     const termos = [
-        "carne moida",
-        "panqueca",
-        "bolo de banana",
-        "jantar vegano",
-        "salpicão",
-        "panetone",
-        "bolo",
-        "salada de quuinoa",
+        "Carne Moida",
+        "Panqueca",
+        "Bolo de Banana",
+        "Jantar Vegano",
+        "Salpicão",
+        "Panetone",
+        "Bolo",
+        "Salada de Quuinoa",
     ]
 
 
@@ -86,18 +86,18 @@ export function Main() {
             <SecondContainer>
                 <Wrapper>
                     <LeftSide>
-                        <Title>o que você quer cozinhar hoje?</Title>
+                        <Title>O que você quer cozinhar hoje?</Title>
 
 
                         <SearchContainer>
-                            <Input placeholder="procurar receita ou ingrediente" />
-                            <Button handleClick={handleLogoutClick}>🔍 procurar</Button>
+                            <Input placeholder="Procurar Receita ou Ingrediente" />
+                            <Button handleClick={handleLogoutClick}>🔍 Procurar</Button>
                         </SearchContainer>
                     </LeftSide>
 
 
                     <RightSide>
-                        <SubTitle>termos em alta</SubTitle>
+                        <SubTitle>Termos em Alta</SubTitle>
                         <Tags>
                             {termos.map((tag, index) => (
                                 <Tag key={index}>{tag}</Tag>
